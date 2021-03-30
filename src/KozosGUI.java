@@ -68,15 +68,15 @@ public class KozosGUI extends javax.swing.JFrame {
 
         jMenu.setText("Feladatok");
 
-        mnOsszeadas.setIcon(new javax.swing.ImageIcon("C:\\Users\\En\\Desktop\\plus.png")); // NOI18N
+        mnOsszeadas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/plus.png"))); // NOI18N
         mnOsszeadas.setText("Összeadás");
         jMenu.add(mnOsszeadas);
 
-        mnKivonas.setIcon(new javax.swing.ImageIcon("C:\\Users\\En\\Desktop\\minus-512.png")); // NOI18N
+        mnKivonas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/minus-512.png"))); // NOI18N
         mnKivonas.setText("Kivonás");
         jMenu.add(mnKivonas);
 
-        mnSzorzas.setIcon(new javax.swing.ImageIcon("C:\\Users\\En\\Desktop\\x.png")); // NOI18N
+        mnSzorzas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/x.png"))); // NOI18N
         mnSzorzas.setText("Szorzás");
         mnSzorzas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +85,7 @@ public class KozosGUI extends javax.swing.JFrame {
         });
         jMenu.add(mnSzorzas);
 
-        mnOsztas.setIcon(new javax.swing.ImageIcon("C:\\Users\\En\\Desktop\\division.png")); // NOI18N
+        mnOsztas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/division.png"))); // NOI18N
         mnOsztas.setText("Osztás");
         jMenu.add(mnOsztas);
 

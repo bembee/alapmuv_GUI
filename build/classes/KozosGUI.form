@@ -12,7 +12,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="mnOsszeadas">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\En\Desktop\plus.png"/>
+                  <Image iconType="3" name="/images/plus.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xd6;sszead&#xe1;s"/>
               </Properties>
@@ -20,7 +20,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="mnKivonas">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\En\Desktop\minus-512.png"/>
+                  <Image iconType="3" name="/images/minus-512.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Kivon&#xe1;s"/>
               </Properties>
@@ -28,7 +28,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="mnSzorzas">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\En\Desktop\x.png"/>
+                  <Image iconType="3" name="/images/x.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Szorz&#xe1;s"/>
               </Properties>
@@ -39,7 +39,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="mnOsztas">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\En\Desktop\division.png"/>
+                  <Image iconType="3" name="/images/division.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Oszt&#xe1;s"/>
               </Properties>
