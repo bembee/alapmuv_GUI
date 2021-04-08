@@ -223,7 +223,7 @@ public class KozosGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnSzorzasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnSzorzasActionPerformed
-        // TODO add your handling code here:
+        szorzas();
     }//GEN-LAST:event_mnSzorzasActionPerformed
 
     private void txBeolvasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txBeolvasActionPerformed
@@ -276,12 +276,12 @@ public class KozosGUI extends javax.swing.JFrame {
         szoveg += "Kérdések száma:";
         szoveg += "\n\tÖsszeadás: " + kerdesekSzama[0];
         szoveg += "\n\tKivonás: " + kerdesekSzama[1];
-        szoveg += "\n\tSzorzás: ";
+        szoveg += "\n\tSzorzás: " + kerdesekSzama[2];
         szoveg += "\n\tOsztás: " + kerdesekSzama[3];
         szoveg += "\n\nPróbálkozások száma:";
         szoveg += "\n\tÖsszeadás: " + probalkozasokSzama[0];
         szoveg += "\n\tKivonás: " + probalkozasokSzama[1];
-        szoveg += "\n\tSzorzás: ";
+        szoveg += "\n\tSzorzás: " + probalkozasokSzama[2];
         szoveg += "\n\tOsztás: " + probalkozasokSzama[3];
         JOptionPane.showMessageDialog(this, szoveg, "Statisztika", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btStatActionPerformed
@@ -388,6 +388,8 @@ public class KozosGUI extends javax.swing.JFrame {
             kivonas();
         } else if (feladatTipus == 4) {
             osztas();
+        } else if (feladatTipus == 3) {
+            szorzas();
         }
         winrate();
     }
@@ -400,6 +402,8 @@ public class KozosGUI extends javax.swing.JFrame {
             kerdesekSzama[1]++;
         } else if (feladatTipus == 4) {
             kerdesekSzama[3]++;
+        } else if (feladatTipus == 3) {
+            kerdesekSzama[2]++;
         }
         kerdesSzama++;
         txtKerSzam.setText(Integer.toString(kerdesSzama));
@@ -414,6 +418,8 @@ public class KozosGUI extends javax.swing.JFrame {
             probalkozasokSzama[1]++;
         } else if (feladatTipus == 4) {
             probalkozasokSzama[3]++;
+        } else if (feladatTipus == 3) {
+            probalkozasokSzama[2]++;
         }
     }
 
@@ -422,5 +428,18 @@ public class KozosGUI extends javax.swing.JFrame {
         winrate = (double) joValaszDb / ((double) probalkozasDb + (double) kerdesSzama + 1 - (double) joValaszDb) * 100;
         txtWinRateSzam.setText(String.format("%.1f", winrate) + "%");
 
+    }
+
+    private void szorzas() {
+        feladatTipus = 3;
+        kerdesSzamlalo();
+        int szorzandoSzam = rnd.nextInt(50) + 2;
+        int szorzoSzam = rnd.nextInt(50) + 2;
+        while (szorzandoSzam * szorzoSzam > 100) {
+            szorzandoSzam = rnd.nextInt(50) + 2;
+            szorzoSzam = rnd.nextInt(50) + 2;
+        }
+        txtFeladat.setText(String.valueOf(szorzandoSzam + " * " + szorzoSzam));
+        megoldas = szorzandoSzam * szorzoSzam;
     }
 }
