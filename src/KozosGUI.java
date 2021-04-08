@@ -429,7 +429,7 @@ public class KozosGUI extends javax.swing.JFrame {
 
     private void winrate() {
         //                      2     /                  2           +           20+1-2  =20 *100
-        winrate = (double) joValaszDb / ((double) probalkozasDb + (double) kerdesSzama + 1 - (double) joValaszDb) * 100;
+        winrate =  joValaszDb / (probalkozasDb +  kerdesSzama + 1 - joValaszDb) * 100;
         txtWinRateSzam.setText(String.format("%.1f", winrate) + "%");
 
     }
