@@ -217,11 +217,11 @@ public class KozosGUI extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void osztas() {
-        int osztandoszam = rnd.nextInt(100)+1;
-        int osztoszam = rnd.nextInt(100)+2;
+        int osztandoszam = rnd.nextInt(99)+1;
+        int osztoszam = rnd.nextInt(98)+2;
         while(!(osztandoszam % osztoszam == 0) ||(osztandoszam == osztoszam)){
-            osztandoszam = rnd.nextInt(100)+1;
-            osztoszam = rnd.nextInt(100)+2;
+            osztandoszam = rnd.nextInt(99)+1;
+            osztoszam = rnd.nextInt(98)+2;
         }
         txtFeladat.setText(String.valueOf(osztandoszam + " / " + osztoszam));
         feladatTipus = 4;
