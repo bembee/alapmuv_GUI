@@ -84,7 +84,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="txtFeladat" min="-2" pref="113" max="-2" attributes="0"/>
@@ -103,7 +103,26 @@
                       <Component id="btUj" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="48" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btStat" min="-2" pref="113" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtProbSzoveg" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtKerSzoveg" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtJoSzoveg" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtJoSzam" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtKerSzam" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtProbSzam" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtWinRateSzam" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="txtWinRate" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -112,15 +131,43 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="txtFeladat" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Component id="btUj" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="btUj" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="txBeolvas" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btEllenoriz" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                      <Component id="txtWinRateSzam" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtWinRate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtKerSzoveg" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtKerSzam" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtProbSzoveg" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtProbSzam" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtJoSzam" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtJoSzoveg" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="41" pref="41" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="txBeolvas" min="-2" pref="28" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btEllenoriz" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btMegoldKiir" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="27" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btMegoldKiir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btStat" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="76" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -128,10 +175,17 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="txtFeladat">
       <Properties>
-        <Property name="text" type="java.lang.String" value="FELADAT"/>
+        <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txBeolvas">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
+      </Properties>
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+      </AccessibilityProperties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txBeolvasActionPerformed"/>
       </Events>
@@ -163,6 +217,60 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btMegoldKiirActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txtKerSzoveg">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="K&#xe9;rd&#xe9;sek sz&#xe1;ma:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txtProbSzoveg">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pr&#xf3;b&#xe1;lkoz&#xe1;sok sz&#xe1;ma:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txtJoSzoveg">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="J&#xf3; eredm&#xe9;nyek:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txtKerSzam">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txtProbSzam">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txtJoSzam">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txtWinRate">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="11" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Win rate:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txtWinRateSzam">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="11" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="0,0%"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btStat">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Statisztika"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btStatActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
