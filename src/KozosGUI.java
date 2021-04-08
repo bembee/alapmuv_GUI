@@ -1,7 +1,6 @@
 
 import java.util.Random;
 
-
 public class KozosGUI extends javax.swing.JFrame {
 
     public KozosGUI() {
@@ -9,6 +8,7 @@ public class KozosGUI extends javax.swing.JFrame {
     }
     Random rnd = new Random();
     int feladatTipus;
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -149,7 +149,9 @@ public class KozosGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btEllenorizActionPerformed
 
     private void btUjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUjActionPerformed
-        if(feladatTipus == 4){
+        if (feladatTipus == 2) {
+            kivonas();
+        } else if (feladatTipus == 4) {
             osztas();
         }
     }//GEN-LAST:event_btUjActionPerformed
@@ -159,7 +161,7 @@ public class KozosGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_mnOsszeadasActionPerformed
 
     private void mnKivonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnKivonasActionPerformed
-        // TODO add your handling code here:
+        kivonas();
     }//GEN-LAST:event_mnKivonasActionPerformed
 
     private void mnOsztasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnOsztasActionPerformed
@@ -170,7 +172,7 @@ public class KozosGUI extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -217,13 +219,24 @@ public class KozosGUI extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void osztas() {
-        int osztandoszam = rnd.nextInt(99)+1;
-        int osztoszam = rnd.nextInt(98)+2;
-        while(!(osztandoszam % osztoszam == 0) ||(osztandoszam == osztoszam)){
-            osztandoszam = rnd.nextInt(99)+1;
-            osztoszam = rnd.nextInt(98)+2;
+        int osztandoszam = rnd.nextInt(99) + 1;
+        int osztoszam = rnd.nextInt(98) + 2;
+        while (!(osztandoszam % osztoszam == 0) || (osztandoszam == osztoszam)) {
+            osztandoszam = rnd.nextInt(99) + 1;
+            osztoszam = rnd.nextInt(98) + 2;
         }
         txtFeladat.setText(String.valueOf(osztandoszam + " / " + osztoszam));
         feladatTipus = 4;
+    }
+
+    private void kivonas() {
+        int alapSzam = rnd.nextInt(99) + 1;
+        int kivonandoSzam = rnd.nextInt(99) + 1;
+        while (kivonandoSzam > alapSzam) {
+            alapSzam = rnd.nextInt(99) + 1;
+            kivonandoSzam = rnd.nextInt(99) + 1;
+        }
+        txtFeladat.setText(String.valueOf(alapSzam + " - " + kivonandoSzam));
+        feladatTipus = 2;
     }
 }
