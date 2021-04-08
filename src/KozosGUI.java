@@ -165,11 +165,13 @@ public class KozosGUI extends javax.swing.JFrame {
             kivonas();
         } else if (feladatTipus == 4) {
             osztas();
+        } else if (feladatTipus == 1) {
+            osszeadas();
         }
     }//GEN-LAST:event_btUjActionPerformed
 
     private void mnOsszeadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnOsszeadasActionPerformed
-        // TODO add your handling code here:
+        osszeadas();
     }//GEN-LAST:event_mnOsszeadasActionPerformed
 
     private void mnKivonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnKivonasActionPerformed
@@ -252,5 +254,13 @@ public class KozosGUI extends javax.swing.JFrame {
         txtFeladat.setText(String.valueOf(alapSzam + " - " + kivonandoSzam));
         feladatTipus = 2;
         megoldas = alapSzam - kivonandoSzam;
+    }
+    
+    private void osszeadas(){
+        int szam1 = rnd.nextInt(98) + 1;
+        int szam2 = rnd.nextInt(99 - szam1) + 1;
+        txtFeladat.setText(String.valueOf(szam1 + " + " + szam2));
+        feladatTipus = 1;
+        megoldas = szam1 + szam2;
     }
 }
