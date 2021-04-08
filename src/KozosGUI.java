@@ -350,10 +350,6 @@ public class KozosGUI extends javax.swing.JFrame {
         kerdesSzamlalo();
         int szam1 = rnd.nextInt(98) + 1;
         int szam2 = rnd.nextInt(99 - szam1) + 1;
-        while(szam1 +szam2 > 100){
-            szam1 = rnd.nextInt(98) + 1;
-            szam2 = rnd.nextInt(99 - szam1) + 1;
-        }
         txtFeladat.setText(String.valueOf(szam1 + " + " + szam2));
         megoldas = szam1 + szam2;
     }
@@ -429,7 +425,7 @@ public class KozosGUI extends javax.swing.JFrame {
 
     private void winrate() {
         //                      2     /                  2           +           20+1-2  =20 *100
-        winrate =  joValaszDb / (probalkozasDb +  kerdesSzama + 1 - joValaszDb) * 100;
+        winrate = (double) joValaszDb / ((double) probalkozasDb + (double) kerdesSzama + 1 - (double) joValaszDb) * 100;
         txtWinRateSzam.setText(String.format("%.1f", winrate) + "%");
 
     }
