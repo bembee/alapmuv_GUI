@@ -1,10 +1,14 @@
 
+import java.util.Random;
+
+
 public class KozosGUI extends javax.swing.JFrame {
 
     public KozosGUI() {
         initComponents();
     }
-
+    Random rnd = new Random();
+    int feladatTipus;
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -145,7 +149,9 @@ public class KozosGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btEllenorizActionPerformed
 
     private void btUjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUjActionPerformed
-        // TODO add your handling code here:
+        if(feladatTipus == 4){
+            osztas();
+        }
     }//GEN-LAST:event_btUjActionPerformed
 
     private void mnOsszeadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnOsszeadasActionPerformed
@@ -157,13 +163,14 @@ public class KozosGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_mnKivonasActionPerformed
 
     private void mnOsztasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnOsztasActionPerformed
-        // TODO add your handling code here:
+        osztas();
     }//GEN-LAST:event_mnOsztasActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -208,4 +215,15 @@ public class KozosGUI extends javax.swing.JFrame {
     private javax.swing.JTextField txBeolvas;
     private javax.swing.JLabel txtFeladat;
     // End of variables declaration//GEN-END:variables
+
+    private void osztas() {
+        int osztandoszam = rnd.nextInt(100)+1;
+        int osztoszam = rnd.nextInt(100)+2;
+        while(!(osztandoszam % osztoszam == 0) ||(osztandoszam == osztoszam)){
+            osztandoszam = rnd.nextInt(100)+1;
+            osztoszam = rnd.nextInt(100)+2;
+        }
+        txtFeladat.setText(String.valueOf(osztandoszam + " / " + osztoszam));
+        feladatTipus = 4;
+    }
 }
