@@ -1,5 +1,6 @@
 
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 public class KozosGUI extends javax.swing.JFrame {
 
@@ -8,6 +9,7 @@ public class KozosGUI extends javax.swing.JFrame {
     }
     Random rnd = new Random();
     int feladatTipus;
+    int megoldas;
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -145,7 +147,17 @@ public class KozosGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_txBeolvasActionPerformed
 
     private void btEllenorizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEllenorizActionPerformed
-        // TODO add your handling code here:
+
+        try {
+            int valasz = Integer.parseInt(txBeolvas.getText());
+            if (megoldas == valasz) {
+                JOptionPane.showMessageDialog(this, "Jó", "Rendelés", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Rossz", "Rendelés", JOptionPane.INFORMATION_MESSAGE);
+            }
+
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_btEllenorizActionPerformed
 
     private void btUjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUjActionPerformed
@@ -227,6 +239,7 @@ public class KozosGUI extends javax.swing.JFrame {
         }
         txtFeladat.setText(String.valueOf(osztandoszam + " / " + osztoszam));
         feladatTipus = 4;
+        megoldas = osztandoszam / osztoszam;
     }
 
     private void kivonas() {
@@ -238,5 +251,6 @@ public class KozosGUI extends javax.swing.JFrame {
         }
         txtFeladat.setText(String.valueOf(alapSzam + " - " + kivonandoSzam));
         feladatTipus = 2;
+        megoldas = alapSzam - kivonandoSzam;
     }
 }
