@@ -54,6 +54,11 @@ public class KozosGUI extends javax.swing.JFrame {
 
         btMegoldKiir.setBackground(new java.awt.Color(0, 204, 0));
         btMegoldKiir.setText("Megoldás kiírása");
+        btMegoldKiir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMegoldKiirActionPerformed(evt);
+            }
+        });
 
         jMenu.setText("Feladatok");
 
@@ -151,9 +156,9 @@ public class KozosGUI extends javax.swing.JFrame {
         try {
             int valasz = Integer.parseInt(txBeolvas.getText());
             if (megoldas == valasz) {
-                JOptionPane.showMessageDialog(this, "Jó", "Rendelés", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Jó válasz", "Jó", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(this, "Rossz", "Rendelés", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Rossz válasz", "Rossz", JOptionPane.INFORMATION_MESSAGE);
             }
 
         } catch (Exception e) {
@@ -181,6 +186,10 @@ public class KozosGUI extends javax.swing.JFrame {
     private void mnOsztasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnOsztasActionPerformed
         osztas();
     }//GEN-LAST:event_mnOsztasActionPerformed
+
+    private void btMegoldKiirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMegoldKiirActionPerformed
+        JOptionPane.showMessageDialog(this, "Megoldás:\n" + txtFeladat.getText() + " = " + megoldas, "Megoldás", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btMegoldKiirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,8 +264,8 @@ public class KozosGUI extends javax.swing.JFrame {
         feladatTipus = 2;
         megoldas = alapSzam - kivonandoSzam;
     }
-    
-    private void osszeadas(){
+
+    private void osszeadas() {
         int szam1 = rnd.nextInt(98) + 1;
         int szam2 = rnd.nextInt(99 - szam1) + 1;
         txtFeladat.setText(String.valueOf(szam1 + " + " + szam2));

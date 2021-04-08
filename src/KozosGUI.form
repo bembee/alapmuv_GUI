@@ -161,6 +161,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Megold&#xe1;s ki&#xed;r&#xe1;sa"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btMegoldKiirActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
